@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Training for Business | RIPEDA — Give Your Team Back 1 Hour a Day</title>
+<meta name="description" content="Practical, hands-on AI training for businesses. Apple Intelligence, Claude, ChatGPT, Copilot — taught by your trusted IT partner. Give your team back at least 1 hour a day.">
+<link rel="canonical" href="https://getanhourback.com/">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getanhourback.com/">
+<meta property="og:title" content="AI Training for Business | RIPEDA — Give Your Team Back 1 Hour a Day">
+<meta property="og:description" content="Practical, hands-on AI training for businesses. Apple Intelligence, Claude, ChatGPT, Copilot — taught by your trusted IT partner. Give your team back at least 1 hour a day.">
+<meta property="og:image" content="https://ripeda.com/images/index/main-site.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Training for Business | RIPEDA — Give Your Team Back 1 Hour a Day">
+<meta name="twitter:description" content="Practical, hands-on AI training for businesses. Apple Intelligence, Claude, ChatGPT, Copilot — taught by your trusted IT partner.">
+<meta name="twitter:image" content="https://ripeda.com/images/index/main-site.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2f2f41;
+    --blue: #609bc3;
+    --blue-hover: rgb(133, 178, 209);
+    --dark-blue: #4282ae;
+    --light-bg: #f8f9fa;
+    --border-light: #f6fcff;
+    --white: #ffffff;
+    --muted: #6c757d;
+    --text: #2c3e50;
+    --text-light: #5c5a5a;
+    --accent-green: #198754;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "Helvetica Neue", sans-serif, serif;
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  /* --- HEADER (matches ripeda.com) --- */
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header img { height: 32px; }
+  .header .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .header .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  .header .nav-links a:hover { color: var(--blue); }
+  .button {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+    background: var(--blue);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .button:hover {
+    background: var(--blue-hover);
+    transform: translateY(-1px);
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  /* --- HERO (ripeda.com style: left-aligned, light bg) --- */
+  .intro {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+  .intro .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .intro .col-text { flex: 1 1 55%; }
+  .intro .col-image {
+    flex: 1 1 40%;
+    text-align: right;
+  }
+  .intro .col-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  .intro .tag {
+    display: inline-block;
+    background: rgba(96,155,195,0.12);
+    color: var(--blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .intro h1 {
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .intro h1 span { color: var(--blue); }
+  .intro p.sub {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+  .intro .stat-row {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0 2rem;
+    flex-wrap: wrap;
+  }
+  .intro .stat { text-align: center; }
+  .intro .stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue);
+    display: block;
+  }
+  .intro .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .intro .call {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .button-secondary {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.025em;
+  }
+
+  /* --- SECTIONS --- */
+  section { padding: 60px 0; }
+  .section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bg-light { background: var(--light-bg); border-top: 1px solid #e9ecef; }
+
+  /* --- PROBLEM CARDS --- */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .problem-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 20px;
+    border-left: 3px solid var(--blue);
+  }
+  .problem-card h3 {
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .problem-card p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* --- PITCH BANNER --- */
+  .pitch-banner {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .pitch-banner .pitch-headline {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .pitch-banner .pitch-headline span { color: var(--white); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); text-underline-offset: 4px; }
+  .pitch-banner p { color: rgba(255,255,255,0.85); max-width: 650px; margin: 0 auto; font-size: 1.05rem; }
+
+  /* --- MODULE CARDS --- */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .module-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 20px;
+    border-top: 3px solid var(--blue);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  .module-card .num {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .module-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 0.4rem; font-weight: 600; }
+  .module-card p { color: var(--text-light); font-size: 0.9rem; }
+
+  /* --- TOOLS --- */
+  .tools-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .tool-badge {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    min-width: 140px;
+  }
+  .tool-badge .name { font-weight: 600; color: var(--navy); font-size: 1rem; }
+  .tool-badge .desc { color: var(--muted); font-size: 0.8rem; }
+  .tool-badge.featured {
+    border: 2px solid var(--blue);
+    background: rgba(96,155,195,0.05);
+  }
+
+  /* --- ROI STATS --- */
+  .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .roi-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .roi-card .big {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .roi-card .label { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+
+  /* --- ROI CALCULATOR --- */
+  .calc-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .calc-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .calc-inputs {
+    padding: 2.5rem;
+    border-right: 1px solid #e9ecef;
+  }
+  .calc-inputs h3 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  .calc-field { margin-bottom: 1.5rem; }
+  .calc-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .calc-field input[type="number"],
+  .calc-field select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text);
+    font-family: inherit;
+    background: var(--white);
+    -moz-appearance: textfield;
+  }
+  .calc-field input[type="number"]:focus,
+  .calc-field select:focus {
+    outline: none;
+    border-color: var(--blue);
+  }
+  .calc-field input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .calc-field .range-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .calc-field input[type="range"] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #dee2e6;
+    border-radius: 3px;
+    outline: none;
+  }
+  .calc-field input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--blue);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .calc-field input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--blue);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+  .range-value {
+    font-weight: 700;
+    color: var(--blue);
+    min-width: 60px;
+    text-align: right;
+    font-size: 1rem;
+  }
+  .calc-field .hint {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* Grant toggle */
+  .grant-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+  }
+  .grant-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  .grant-slider {
+    display: inline-block;
+    width: 44px;
+    min-width: 44px;
+    height: 24px;
+    background: #dee2e6;
+    border-radius: 12px;
+    position: relative;
+    transition: background 0.2s;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+  .grant-slider::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--white);
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.2s;
+  }
+  .grant-toggle input:checked + .grant-slider {
+    background: var(--accent-green);
+  }
+  .grant-toggle input:checked + .grant-slider::after {
+    transform: translateX(20px);
+  }
+  .grant-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    vertical-align: middle;
+  }
+
+  /* Results panel */
+  .calc-results {
+    padding: 2.5rem;
+    background: var(--navy);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .calc-results h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+  .result-item {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .result-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .result-item .result-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+  .result-item .result-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .result-item .result-value.highlight {
+    color: var(--accent-green);
+    font-size: 2rem;
+  }
+  .result-item .result-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.15rem;
+  }
+  .calc-footnote {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: var(--light-bg);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 768px) {
+    .calc-body { grid-template-columns: 1fr; }
+    .calc-inputs { border-right: none; border-bottom: 1px solid #e9ecef; padding: 2rem 1.5rem; }
+    .calc-results { padding: 2rem 1.5rem; }
+  }
+
+  /* --- INDUSTRIES --- */
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .ind-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 20px;
+  }
+  .ind-card h3 { color: var(--navy); margin-bottom: 0.5rem; font-size: 1.05rem; font-weight: 600; }
+  .ind-card ul { list-style: none; padding: 0; }
+  .ind-card ul li {
+    padding: 0.3rem 0;
+    color: var(--text);
+    font-size: 0.9rem;
+  }
+  .ind-card ul li::before {
+    content: "\2713";
+    color: var(--accent-green);
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+
+  /* --- TRAINING OPTIONS --- */
+  .format-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .format-card {
+    border: 1px solid #e9ecef;
+    border-radius: 3px;
+    padding: 2rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .format-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .format-card.popular {
+    border-color: var(--blue);
+    border-width: 2px;
+    position: relative;
+  }
+  .format-card.popular::before {
+    content: "Most Popular";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.2rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+  .format-card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 0.3rem; font-weight: 600; }
+  .format-card .duration { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.8rem; }
+  .format-card .price { font-size: 1.6rem; font-weight: 700; color: var(--navy); }
+  .format-card .price-note { color: var(--muted); font-size: 0.8rem; }
+  .format-card ul { list-style: none; text-align: left; padding: 1rem 0 0; }
+  .format-card ul li { padding: 0.25rem 0; font-size: 0.9rem; color: var(--text); }
+  .format-card ul li::before { content: "\2713 "; color: var(--accent-green); font-weight: 700; }
+  .funding-note {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.2rem;
+    background: rgba(96,155,195,0.08);
+    border-radius: 3px;
+    color: var(--navy);
+    font-size: 0.95rem;
+  }
+  .funding-note strong { color: var(--blue); }
+
+  /* --- WHY RIPEDA (feature grid like ripeda.com) --- */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .feature {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--blue);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--white);
+    font-size: 1.2rem;
+  }
+  .feature h3 { font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem; font-weight: 600; }
+  .feature p { color: var(--text-light); font-size: 0.9rem; }
+
+  /* --- TESTIMONIAL (matches ripeda.com carousel style) --- */
+  .testimonial-section {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .testimonial-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 3px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px 30px;
+  }
+  .testimonial-card blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text);
+    border: 0;
+    margin: 0 0 15px;
+    padding: 0;
+  }
+  .testimonial-card cite {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--blue);
+    font-size: 0.95rem;
+  }
+
+  /* --- FINAL CTA --- */
+  .final-cta {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .final-cta h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .final-cta p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    max-width: 550px;
+    margin: 0 auto 2rem;
+  }
+  .final-cta .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* --- FOOTER (matches ripeda.com: blue bg) --- */
+  .footer {
+    background: var(--blue);
+    padding: 15px 0;
+  }
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-title {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+  }
+  .footer-links a:hover { opacity: 0.8; }
+
+  /* Sub-footer (matches ripeda.com) */
+  .sub-footer {
+    background: var(--navy);
+    padding: 12px 0;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+  }
+  .sub-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .sub-footer .social {
+    display: flex;
+    gap: 1rem;
+  }
+  .sub-footer .social a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .sub-footer .social a:hover { color: var(--white); }
+  .sub-footer .copyright { color: rgba(255,255,255,0.5); }
+  .sub-footer .address {
+    width: 100%;
+    text-align: right;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .intro { padding: 40px 0; }
+    .intro .row { flex-direction: column; }
+    .intro .col-image { display: none; }
+    .intro h1 { font-size: 32px; }
+    .intro .stat-row { gap: 1rem; }
+    section { padding: 40px 0; }
+    .header .nav-links { display: none; }
+    .footer .container { flex-direction: column; text-align: center; }
+    .sub-footer .container { flex-direction: column; text-align: center; }
+    .sub-footer .address { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER (ripeda.com style) -->
+<div class="header">
+  <div class="container">
+    <a href="https://ripeda.com/"><img alt="RIPEDA" src="https://ripeda.com/images/logo/logo.png" height="32"></a>
+    <ul class="nav-links">
+      <li><a href="https://ripeda.com/services/">Managed Services</a></li>
+      <li><a href="#modules">Training Modules</a></li>
+      <li><a href="#formats">Pricing</a></li>
+      <li><a href="#contact" class="button">Book a Free Consultation</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- HERO (ripeda.com style: left-aligned text, image right) -->
+<div class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-text">
+        <div class="tag">AI TRAINING FOR BUSINESS</div>
+        <h1>Give Your Team Back<br><span>At Least 1 Hour a Day</span></h1>
+        <p class="sub">Practical, hands-on AI training from RIPEDA — Apple Technical Partners and IT &amp; AI Managed Service providers. Your team learns to use AI confidently, safely, and productively — starting tomorrow.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-num">60%</span><span class="stat-label">Of companies see no AI ROI yet<sup>1</sup></span></div>
+          <div class="stat"><span class="stat-num">16%</span><span class="stat-label">Of workers are AI-proficient<sup>2</sup></span></div>
+          <div class="stat"><span class="stat-num">70+</span><span class="stat-label">Businesses trust RIPEDA</span></div>
+        </div>
+        <div class="call">
+          <a href="#contact" class="button">Book a Free Discovery Call</a>
+          <a href="#formats" class="button-secondary">See Training Options &darr;</a>
+        </div>
+      </div>
+      <div class="col-image">
+        <img alt="AI Training for Business" src="https://ripeda.com/images/index/main-site.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Your Team Is Already Using AI</h2>
+    <p class="section-sub">The question isn't whether they'll use it — it's whether they'll use it <em>right</em>.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Without Training</h3>
+        <p>Employees paste confidential client data into free AI tools. No policy, no guardrails, no consistency. One mistake can mean a privacy violation.</p>
+      </div>
+      <div class="problem-card">
+        <h3>With Generic Webinars</h3>
+        <p>Theory-heavy, one-size-fits-all examples, no connection to your actual workflows. Your team watches, nods, and forgets by Friday.</p>
+      </div>
+      <div class="problem-card">
+        <h3>With RIPEDA Training</h3>
+        <p>Hands-on, built around YOUR tools and YOUR industry. Your team leaves with prompts they'll use tomorrow and a policy they can implement today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PITCH BANNER -->
+<div class="pitch-banner">
+  <div class="container">
+    <p class="pitch-headline">What if every employee on your team<br>got <span>1 extra hour back</span> every single day?</p>
+    <p>That's 5 hours a week. 20 hours a month. Per person. AI handles the drafting, summarizing, researching, and formatting — your team focuses on what actually requires a human.</p>
+  </div>
+</div>
+
+<!-- WHAT YOUR TEAM LEARNS -->
+<section id="modules">
+  <div class="container">
+    <h2 class="section-title">What Your Team Will Learn</h2>
+    <p class="section-sub">Six modules, all hands-on, all practical. No theory without application.</p>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="num">1</div>
+        <h3>AI Fundamentals</h3>
+        <p>What AI can and can't do, how LLMs work in 60 seconds, and why "hallucinations" matter. Plain language, no jargon.</p>
+      </div>
+      <div class="module-card">
+        <div class="num">2</div>
+        <h3>Hands-On Daily Skills</h3>
+        <p>Draft emails in 2 minutes instead of 20. Summarize 20-page reports instantly. Turn rough notes into polished content.</p>
+      </div>
+      <div class="module-card">
+        <div class="num">3</div>
+        <h3>AI + Your Existing Tools</h3>
+        <p>Get the most from Apple Intelligence, Claude, Microsoft Copilot, ChatGPT, and Gemini. Know which tool to use and when.</p>
+      </div>
+      <div class="module-card">
+        <div class="num">4</div>
+        <h3>Built for Your Industry</h3>
+        <p>Custom exercises for medical offices, marketing teams, and professional services — not generic examples.</p>
+      </div>
+      <div class="module-card">
+        <div class="num">5</div>
+        <h3>AI Policy &amp; Compliance</h3>
+        <p>PIPEDA, PIPA, and data safety. Leave with an AI acceptable use policy your organization can implement immediately.</p>
+      </div>
+      <div class="module-card">
+        <div class="num">6</div>
+        <h3>Action Plan &amp; Next Steps</h3>
+        <p>Every attendee builds a personal AI action plan. Plus ongoing support options to keep your team current as AI evolves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Tools We Cover</h2>
+    <p class="section-sub">We focus on the platforms your team will actually use — with special depth on Apple Intelligence and Claude.</p>
+    <div class="tools-row">
+      <div class="tool-badge featured">
+        <div class="name">Apple Intelligence</div>
+        <div class="desc">On-device, private, built-in</div>
+      </div>
+      <div class="tool-badge featured">
+        <div class="name">Claude</div>
+        <div class="desc">Chat, CoWork, Code</div>
+      </div>
+      <div class="tool-badge">
+        <div class="name">ChatGPT</div>
+        <div class="desc">All-around assistant</div>
+      </div>
+      <div class="tool-badge">
+        <div class="name">Microsoft Copilot</div>
+        <div class="desc">365 integration</div>
+      </div>
+      <div class="tool-badge">
+        <div class="name">Google Gemini</div>
+        <div class="desc">Workspace + search</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section>
+  <div class="container">
+    <h2 class="section-title">The Return on Investment (ROI) Is Hard to Ignore</h2>
+    <p class="section-sub">Based on published research from McKinsey, Forrester, and Harvard Business School.</p>
+    <div class="roi-grid">
+      <div class="roi-card">
+        <div class="big">20–40%</div>
+        <div class="label">Productivity increase within 18 months of AI training<sup>1</sup></div>
+      </div>
+      <div class="roi-card">
+        <div class="big">$9,100</div>
+        <div class="label">Spent per employee on software — but only $1,200 on training<sup>1</sup></div>
+      </div>
+      <div class="roi-card">
+        <div class="big">25%</div>
+        <div class="label">Faster task completion for AI-trained workers<sup>3</sup></div>
+      </div>
+      <div class="roi-card">
+        <div class="big">40%</div>
+        <div class="label">Higher quality output from trained AI users<sup>3</sup></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+<section class="bg-light" id="calculator">
+  <div class="container">
+    <h2 class="section-title">Calculate Your ROI</h2>
+    <p class="section-sub">Plug in your numbers and see how quickly AI training pays for itself.</p>
+    <div class="calc-container">
+      <div class="calc-body">
+        <div class="calc-inputs">
+          <h3>Your Team</h3>
+          <div class="calc-field">
+            <label for="numEmployees">Number of Employees to Train</label>
+            <input type="number" id="numEmployees" value="5" min="1" max="500">
+          </div>
+          <div class="calc-field">
+            <label for="avgSalary">Average Salary per Employee ($/year)</label>
+            <input type="number" id="avgSalary" value="65000" min="20000" max="500000" step="1000">
+            <div class="hint" id="salaryHint">That's ~$31/hr — used to calculate the dollar value of time saved</div>
+          </div>
+          <div class="calc-field">
+            <label for="trainingFormat">Training Format</label>
+            <select id="trainingFormat">
+              <option value="750">Executive Briefing — from $750</option>
+              <option value="5500" selected>Full-Day Intensive — from $5,500</option>
+              <option value="5000">Lunch &amp; Learn Series — from $5,000</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="grant-toggle">
+              <input type="checkbox" id="grantToggle">
+              <span class="grant-slider"></span>
+              <span class="grant-label">Apply Government Grant (50% off training)</span>
+            </label>
+            <div class="hint">Provincial and federal grants across Canada and the US can cover 50–80% of costs. <a href="#contact" style="color:var(--blue);">Ask us which programs apply to you.</a></div>
+          </div>
+          <div class="calc-field">
+            <label for="prodGain">Estimated Time Saved Per Employee Per Day</label>
+            <div class="range-row">
+              <input type="range" id="prodGain" min="15" max="120" value="60" step="5">
+              <span class="range-value" id="prodGainLabel">60 min</span>
+            </div>
+            <div class="hint">Our average is 1 hour/day — conservative estimates start at 30 min</div>
+          </div>
+        </div>
+        <div class="calc-results">
+          <h3>Your Results</h3>
+          <div class="result-item">
+            <div class="result-label">Annual Time Saved</div>
+            <div class="result-value" id="resultHours">1,300 hrs</div>
+            <div class="result-sub" id="resultHoursSub">5 hrs/day across your team</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Value of Time Saved</div>
+            <div class="result-value" id="resultValue">$40,625</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Training Investment</div>
+            <div class="result-value" id="resultCost">$5,500</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Break-Even Point</div>
+            <div class="result-value highlight" id="resultBreakeven">36 days</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">First-Year ROI</div>
+            <div class="result-value highlight" id="resultROI">639%</div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-footnote">
+        Based on 260 working days/year and total compensation cost. Actual results vary by role and industry.
+        Government grants may reduce your training investment by 50–80% depending on your province or state.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var elEmployees = document.getElementById('numEmployees');
+  var elSalary    = document.getElementById('avgSalary');
+  var elFormat    = document.getElementById('trainingFormat');
+  var elGrant     = document.getElementById('grantToggle');
+  var elGain      = document.getElementById('prodGain');
+  var elGainLabel = document.getElementById('prodGainLabel');
+  var elResultHours     = document.getElementById('resultHours');
+  var elResultHoursSub  = document.getElementById('resultHoursSub');
+  var elResultValue     = document.getElementById('resultValue');
+  var elResultCost      = document.getElementById('resultCost');
+  var elResultBreakeven = document.getElementById('resultBreakeven');
+  var elResultROI       = document.getElementById('resultROI');
+  var elSalaryHint      = document.getElementById('salaryHint');
+  var WORKING_DAYS_PER_YEAR = 260;
+  var WORKING_HOURS_PER_YEAR = 2080;
+  function formatDollars(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function formatNumber(n) { return Math.round(n).toLocaleString('en-US'); }
+  function calculate() {
+    var employees = Math.max(1, parseInt(elEmployees.value) || 1);
+    var salary    = Math.max(0, parseInt(elSalary.value) || 0);
+    var baseCost  = parseInt(elFormat.value) || 0;
+    var grantOn   = elGrant.checked;
+    var cost      = grantOn ? Math.round(baseCost * 0.5) : baseCost;
+    var minPerDay = parseInt(elGain.value) || 60;
+    elGainLabel.textContent = minPerDay + ' min';
+    var hourlyRate = salary / WORKING_HOURS_PER_YEAR;
+    elSalaryHint.textContent = "That\u2019s ~$" + Math.round(hourlyRate) + "/hr \u2014 used to calculate the dollar value of time saved";
+    var hrsSavedPerDay = minPerDay / 60;
+    var annualHoursSaved = employees * hrsSavedPerDay * WORKING_DAYS_PER_YEAR;
+    var annualValueSaved = annualHoursSaved * hourlyRate;
+    var dailySavings = employees * hrsSavedPerDay * hourlyRate;
+    var breakevenDays = dailySavings > 0 ? Math.ceil(cost / dailySavings) : 999;
+    var roi = cost > 0 ? ((annualValueSaved - cost) / cost) * 100 : 0;
+    elResultHours.textContent    = formatNumber(annualHoursSaved) + ' hrs';
+    elResultHoursSub.textContent = formatNumber(employees * hrsSavedPerDay) + ' hrs/day across your team';
+    elResultValue.textContent    = formatDollars(annualValueSaved);
+    elResultCost.textContent     = grantOn ? formatDollars(cost) + ' (after grant)' : formatDollars(cost);
+    elResultBreakeven.textContent = breakevenDays + (breakevenDays === 1 ? ' day' : ' days');
+    elResultROI.textContent      = formatNumber(roi) + '%';
+  }
+  elEmployees.addEventListener('input', calculate);
+  elSalary.addEventListener('input', calculate);
+  elFormat.addEventListener('change', calculate);
+  elGrant.addEventListener('change', calculate);
+  elGain.addEventListener('input', calculate);
+  calculate();
+})();
+</script>
+
+<!-- INDUSTRIES -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Tailored to Your Industry</h2>
+    <p class="section-sub">Not generic corporate training. Every exercise connects to your real workflows.</p>
+    <div class="ind-grid">
+      <div class="ind-card">
+        <h3>Medical &amp; Healthcare</h3>
+        <ul>
+          <li>Patient communication templates</li>
+          <li>De-identified documentation assistance</li>
+          <li>HIA/PIPEDA compliance scenarios</li>
+          <li>Administrative efficiency gains</li>
+        </ul>
+      </div>
+      <div class="ind-card">
+        <h3>Marketing &amp; Creative</h3>
+        <ul>
+          <li>Social media content pipelines</li>
+          <li>Client brief to concept workflows</li>
+          <li>AI image generation guidance</li>
+          <li>Campaign analytics summaries</li>
+        </ul>
+      </div>
+      <div class="ind-card">
+        <h3>Professional Services</h3>
+        <ul>
+          <li>Proposal and engagement letter drafting</li>
+          <li>Contract review assistance</li>
+          <li>Research and competitive analysis</li>
+          <li>Client status reports and updates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING OPTIONS -->
+<section class="bg-light" id="formats">
+  <div class="container">
+    <h2 class="section-title">Training Options</h2>
+    <p class="section-sub">Choose the format that fits your team's schedule and depth needs.</p>
+    <div class="format-grid">
+      <div class="format-card">
+        <h3>Executive Briefing</h3>
+        <div class="duration">90 minutes</div>
+        <div class="price">from $750</div>
+        <div class="price-note">Up to 15 people</div>
+        <ul>
+          <li>AI landscape overview</li>
+          <li>Live demos of key tools</li>
+          <li>Strategic recommendations</li>
+          <li>Q&amp;A with AI specialists</li>
+        </ul>
+      </div>
+      <div class="format-card popular">
+        <h3>Full-Day Intensive</h3>
+        <div class="duration">6-7 hours</div>
+        <div class="price">from $5,500</div>
+        <div class="price-note">Up to 15 people</div>
+        <ul>
+          <li>All 6 training modules</li>
+          <li>Industry-specific exercises</li>
+          <li>AI policy workshop</li>
+          <li>Personal action plans</li>
+          <li>Templates and handouts</li>
+        </ul>
+      </div>
+      <div class="format-card">
+        <h3>Lunch &amp; Learn Series</h3>
+        <div class="duration">4 &times; 90 min over 4 weeks</div>
+        <div class="price">from $5,000</div>
+        <div class="price-note">Up to 15 people</div>
+        <ul>
+          <li>Bite-sized weekly sessions</li>
+          <li>Practice between sessions</li>
+          <li>Builds lasting habits</li>
+          <li>Minimal workflow disruption</li>
+        </ul>
+      </div>
+      <div class="format-card">
+        <h3>Large Group Event</h3>
+        <div class="duration">Custom</div>
+        <div class="price">Contact Us</div>
+        <div class="price-note">16+ people</div>
+        <ul>
+          <li>Conference room arrangements</li>
+          <li>Catering coordination</li>
+          <li>Customized agenda &amp; format</li>
+          <li>Dedicated event planning</li>
+        </ul>
+        <a href="#contact" class="button" style="margin-top:1rem;font-size:12px;">Get a Custom Quote</a>
+      </div>
+    </div>
+    <div class="funding-note">
+      <strong>Government funding may cover 50–80% of training costs.</strong> Programs like BC's Employer Training Grant, Alberta's CAJG/CAPG, and provincial Job Grants across Canada can significantly offset your investment. US programs are also available. <a href="#contact" style="color:var(--blue);font-weight:600;">Ask us which grants apply to your province or state.</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY RIPEDA -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Why RIPEDA?</h2>
+    <p class="section-sub">We're not just AI trainers. We're the IT partner you already trust.</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">&#63743;</div>
+        <div>
+          <h3>Apple Technical Partner</h3>
+          <p>We know Apple Intelligence because we know Apple. An Apple Technical Partner (formerly Apple Consultants Network) since 2012, managing Macs for businesses worldwide.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#9906;</div>
+        <div>
+          <h3>We Know Your Business</h3>
+          <p>As IT and AI Managed Service Partners, we understand real workflows — not just theory. We tailor every session to your industry and tools.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#9872;</div>
+        <div>
+          <h3>On-Site or Remote, Your Choice</h3>
+          <p>Not a generic webinar. We come to your office or deliver live virtual sessions — wherever your team is.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#10003;</div>
+        <div>
+          <h3>Actionable, Not Academic</h3>
+          <p>Leave with prompts you can use, a policy you can implement, and a plan you can follow — not just theory.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#8635;</div>
+        <div>
+          <h3>Long-Term Support</h3>
+          <p>Training is just the start. Our monthly AI advisory retainer keeps your team current as AI evolves.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#128274;</div>
+        <div>
+          <h3>Privacy &amp; Compliance First</h3>
+          <p>PIPEDA, PIPA, and HIA expertise. Your team learns to use AI safely from day one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section bg-light">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:2rem;">What Our Clients Say</h2>
+    <div class="testimonial-card">
+      <blockquote>"As an Apple partner, they carried forward what every Apple experience should be."</blockquote>
+      <cite>— Chris Chivers, Identity Ink</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ONGOING TRAINING -->
+<section id="ongoing">
+  <div class="container">
+    <h2 class="section-title">AI Changes Weekly. Your Training Should Too.</h2>
+    <p class="section-sub">Forrester research shows one-off courses don't work — organizations need "continuous, hands-on learning" to unlock real productivity gains.<sup>2</sup></p>
+    <div class="modules-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div class="module-card">
+        <div class="num" style="background:var(--accent-green);">&#10003;</div>
+        <h3>Monthly AI Update Session</h3>
+        <p>A live 60-minute session each month covering what's new in AI tools your team uses — new features, best practices, and updated prompts. Stay current without the research.</p>
+      </div>
+      <div class="module-card">
+        <div class="num" style="background:var(--accent-green);">&#10003;</div>
+        <h3>AI Champions Program</h3>
+        <p>We train 2–3 internal champions who become your team's go-to AI experts. Includes monthly coaching calls and a private prompt library tailored to your workflows.</p>
+      </div>
+      <div class="module-card">
+        <div class="num" style="background:var(--accent-green);">&#10003;</div>
+        <h3>AI Newsletter &amp; Prompt Library</h3>
+        <p>Weekly curated updates on AI changes that matter to your business. Plus a growing library of tested prompts organized by role and industry.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <p style="color:var(--muted);font-size:0.95rem;max-width:650px;margin:0 auto 1.5rem;">Ongoing training packages start at <strong style="color:var(--navy);">$500/month</strong> and can be bundled with your initial training at a discount. <a href="#contact" style="color:var(--blue);font-weight:600;">Contact us for a custom quote.</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta" id="contact">
+  <h2>Ready to Give Your Team an Unfair Advantage?</h2>
+  <p>Book a free 15-minute discovery call. We'll discuss your team's needs and recommend the right training format.</p>
+  <div class="cta-group">
+    <a href="tel:+18444747332" class="button">Call 1 (844) 474-7332</a>
+    <a href="mailto:info@ripeda.com" class="button" style="background:var(--dark-blue);">Email info@ripeda.com</a>
+  </div>
+  <p style="margin-top:1.5rem;font-size:0.9rem;color:rgba(255,255,255,0.5);">
+    Or start with an <strong>Executive Briefing</strong> — if you book a full workshop within 30 days, the briefing fee is credited toward your training.
+  </p>
+</section>
+
+<!-- SOURCES -->
+<div style="max-width:1140px;margin:0 auto;padding:1.5rem 15px;border-top:1px solid #e9ecef;">
+  <p style="font-size:0.75rem;color:#adb5bd;line-height:1.8;margin:0;">
+    <strong>Sources:</strong><br>
+    <sup>1</sup> McKinsey &amp; Company, <a href="https://www.mckinsey.com/capabilities/operations/our-insights/a-us-productivity-unlock-investing-in-frontline-workers-ai-skills" style="color:#adb5bd;" target="_blank">"A US productivity unlock: Investing in frontline workers' AI skills"</a> (January 2026)<br>
+    <sup>2</sup> Forrester Research via IT Brief Asia, <a href="https://itbrief.asia/story/forrester-finds-ai-training-gap-stalls-workplace-gains" style="color:#adb5bd;" target="_blank">"Forrester finds AI training gap stalls workplace gains"</a> (April 2026)<br>
+    <sup>3</sup> Harvard Business School / BCG, <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" style="color:#adb5bd;" target="_blank">"Navigating the Jagged Technological Frontier"</a> (2024)
+  </p>
+</div>
+
+<!-- FOOTER (ripeda.com style: blue bg) -->
+<div class="footer">
+  <div class="container">
+    <h2 class="footer-title">RIPEDA</h2>
+    <ul class="footer-links">
+      <li><a href="https://ripeda.com/">Home</a></li>
+      <li><a href="https://ripeda.com/services/">Managed Services</a></li>
+      <li><a href="https://ripeda.com/contact/">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SUB-FOOTER (ripeda.com style) -->
+<div class="sub-footer">
+  <div class="container">
+    <div class="social">
+      <a href="mailto:info@ripeda.com">Email</a>
+      <a href="https://www.github.com/ripeda">GitHub</a>
+      <a href="https://www.linkedin.com/company/ripeda-consulting/">LinkedIn</a>
+    </div>
+    <div class="copyright">&copy; RIPEDA. All rights reserved.</div>
+    <div class="address">Suite 300 - 1301 8 Street SW, Calgary, AB T2R 1B7</div>
+  </div>
+</div>
+
+</body>
+</html>
