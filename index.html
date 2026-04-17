@@ -1008,16 +1008,17 @@
             <select id="trainingFormat">
               <option value="750">Executive Briefing — from $750</option>
               <option value="5500" selected>Full-Day Intensive — from $5,500</option>
-              <option value="5000">Lunch &amp; Learn Series — from $5,000</option>
+              <option value="6500">Lunch &amp; Learn Series — from $6,500</option>
             </select>
           </div>
-          <div class="calc-field">
+          <div class="calc-field" id="grantField">
             <label class="grant-toggle">
               <input type="checkbox" id="grantToggle">
               <span class="grant-slider"></span>
               <span class="grant-label">Apply Government Grant (50% off training)</span>
             </label>
-            <div class="hint">Provincial and federal grants across Canada and the US can cover 50–80% of costs. <a href="#contact" style="color:var(--blue);">Ask us which programs apply to you.</a></div>
+            <div class="hint" id="grantHint">Provincial and federal grants across Canada and the US can cover 50–80% of costs. <a href="#contact" style="color:var(--blue);">Ask us which programs apply to you.</a></div>
+            <div class="hint" id="grantNotEligible" style="display:none;color:var(--muted);">Government grants typically apply to Full-Day Intensive and Lunch &amp; Learn formats. <a href="#contact" style="color:var(--blue);">Contact us to confirm eligibility.</a></div>
           </div>
           <div class="calc-field">
             <label for="prodGain">Estimated Time Saved Per Employee Per Day</label>
@@ -1075,11 +1076,22 @@
   var elResultCost      = document.getElementById('resultCost');
   var elResultBreakeven = document.getElementById('resultBreakeven');
   var elResultROI       = document.getElementById('resultROI');
-  var elSalaryHint      = document.getElementById('salaryHint');
+  var elSalaryHint        = document.getElementById('salaryHint');
+  var elGrantHint         = document.getElementById('grantHint');
+  var elGrantNotEligible  = document.getElementById('grantNotEligible');
   var WORKING_DAYS_PER_YEAR = 260;
   var WORKING_HOURS_PER_YEAR = 2080;
+  var GRANT_ELIGIBLE_FORMATS = [5500, 6500];
   function formatDollars(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
   function formatNumber(n) { return Math.round(n).toLocaleString('en-US'); }
+  function updateGrantVisibility() {
+    var baseCost = parseInt(elFormat.value) || 0;
+    var eligible = GRANT_ELIGIBLE_FORMATS.indexOf(baseCost) !== -1;
+    elGrant.disabled = !eligible;
+    if (!eligible) { elGrant.checked = false; }
+    elGrantHint.style.display = eligible ? '' : 'none';
+    elGrantNotEligible.style.display = eligible ? 'none' : '';
+  }
   function calculate() {
     var employees = Math.max(1, parseInt(elEmployees.value) || 1);
     var salary    = Math.max(0, parseInt(elSalary.value) || 0);
@@ -1105,9 +1117,10 @@
   }
   elEmployees.addEventListener('input', calculate);
   elSalary.addEventListener('input', calculate);
-  elFormat.addEventListener('change', calculate);
+  elFormat.addEventListener('change', function() { updateGrantVisibility(); calculate(); });
   elGrant.addEventListener('change', calculate);
   elGain.addEventListener('input', calculate);
+  updateGrantVisibility();
   calculate();
 })();
 </script>
@@ -1172,6 +1185,7 @@
         <div class="duration">6-7 hours</div>
         <div class="price">from $5,500</div>
         <div class="price-note">Up to 15 people</div>
+        <div style="display:inline-block;background:rgba(25,135,84,0.1);color:var(--accent-green);font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:0.5rem;">✓ Grant Eligible</div>
         <ul>
           <li>All 6 training modules</li>
           <li>Industry-specific exercises</li>
@@ -1183,13 +1197,15 @@
       <div class="format-card">
         <h3>Lunch &amp; Learn Series</h3>
         <div class="duration">4 &times; 90 min over 4 weeks</div>
-        <div class="price">from $5,000</div>
+        <div class="price">from $6,500</div>
         <div class="price-note">Up to 15 people</div>
+        <div style="display:inline-block;background:rgba(25,135,84,0.1);color:var(--accent-green);font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:3px;margin-bottom:0.5rem;">✓ Grant Eligible</div>
         <ul>
           <li>Bite-sized weekly sessions</li>
           <li>Practice between sessions</li>
           <li>Builds lasting habits</li>
           <li>Minimal workflow disruption</li>
+          <li>Catering available (optional)</li>
         </ul>
       </div>
       <div class="format-card">
@@ -1276,7 +1292,7 @@
         <div class="trainer-title">Founder &amp; Systems Engineer<br>RIPEDA</div>
       </div>
       <div class="trainer-content">
-        <p>Roy has spent over 25 years making complex technology understandable. Before founding RIPEDA, he trained 100+ engineers worldwide at Mentor Graphics Corporation and helped grow products at Synopsys and Avanti — companies whose software powered chip designs at Intel, Texas Instruments, and NEC Electronics. He delivered training across the Bay Area, Dallas, Austin, San Diego, Los Angeles, Portland, Tokyo, and Penang.</p>
+        <p>Roy holds a BSc in Electrical Engineering from the University of Calgary and has spent over 25 years making complex technology understandable. Before founding RIPEDA, he trained 100+ engineers worldwide at Mentor Graphics Corporation and helped grow products at Synopsys and Avanti — companies whose software powered chip designs at Intel, Texas Instruments, and NEC Electronics. He delivered training across the Bay Area, Dallas, Austin, San Diego, Los Angeles, Portland, Tokyo, and Penang.</p>
         <p>In 2012 he became Director of IT at Calgary Arts Academy, transforming a struggling program from a 1:5 student-to-device ratio to near 1:1 — cutting average device costs by 40% and migrating the school to Office 365 in 2017, a move that made their switch to online learning during COVID-19 nearly seamless.</p>
         <p>That same year he founded RIPEDA, now an Apple Technical Partner serving 70+ businesses across North America in medical, education, and professional services. He brings the same approach to AI training: no jargon, no theory for theory's sake, and no generic examples — just tools your team will use tomorrow, taught by someone who has spent a career turning technical complexity into practical skill.</p>
         <div class="trainer-stats">
