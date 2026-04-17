@@ -741,6 +741,69 @@
     margin-top: 0.3rem;
   }
 
+  /* --- TRAINER BIO --- */
+  .trainer-section { background: var(--white); }
+  .trainer-inner {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  .trainer-photo {
+    flex: 0 0 200px;
+    text-align: center;
+  }
+  .trainer-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--blue);
+  }
+  .trainer-photo .trainer-name {
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 0.75rem;
+    font-size: 1rem;
+  }
+  .trainer-photo .trainer-title {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .trainer-content { flex: 1; }
+  .trainer-content p {
+    color: var(--text-light);
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .trainer-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  .trainer-stat {
+    background: var(--light-bg);
+    border-left: 3px solid var(--blue);
+    padding: 0.5rem 0.85rem;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .trainer-cities {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .trainer-cities strong { color: var(--navy); }
+  @media (max-width: 768px) {
+    .trainer-inner { flex-direction: column; align-items: center; text-align: center; }
+    .trainer-stats { justify-content: center; }
+  }
+
   /* --- RESPONSIVE --- */
   @media (max-width: 768px) {
     .intro { padding: 40px 0; }
@@ -1195,6 +1258,35 @@
         <div>
           <h3>Privacy &amp; Compliance First</h3>
           <p>PIPEDA, PIPA, and HIA expertise. Your team learns to use AI safely from day one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINER BIO -->
+<section class="trainer-section" id="trainer">
+  <div class="container">
+    <h2 class="section-title">Who Delivers Your Training</h2>
+    <p class="section-sub">Not a generic AI influencer. Your trusted IT partner — with a career built on making complex technology accessible.</p>
+    <div class="trainer-inner">
+      <div class="trainer-photo">
+        <img src="roy-miguens.jpg" alt="Roy Miguens, Founder of RIPEDA">
+        <div class="trainer-name">Roy Miguens</div>
+        <div class="trainer-title">Founder &amp; Systems Engineer<br>RIPEDA</div>
+      </div>
+      <div class="trainer-content">
+        <p>Roy has spent over 25 years making complex technology understandable. Before founding RIPEDA, he trained 100+ engineers worldwide at Mentor Graphics Corporation and helped grow products at Synopsys and Avanti — companies whose software powered chip designs at Intel, Texas Instruments, and NEC Electronics. He delivered training across the Bay Area, Dallas, Austin, San Diego, Los Angeles, Portland, Tokyo, and Penang.</p>
+        <p>In 2012 he became Director of IT at Calgary Arts Academy, transforming a struggling program from a 1:5 student-to-device ratio to near 1:1 — cutting average device costs by 40% and migrating the school to Office 365 in 2017, a move that made their switch to online learning during COVID-19 nearly seamless.</p>
+        <p>That same year he founded RIPEDA, now an Apple Technical Partner serving 70+ businesses across North America in medical, education, and professional services. He brings the same approach to AI training: no jargon, no theory for theory's sake, and no generic examples — just tools your team will use tomorrow, taught by someone who has spent a career turning technical complexity into practical skill.</p>
+        <div class="trainer-stats">
+          <div class="trainer-stat">BSc Electrical Engineering — University of Calgary</div>
+          <div class="trainer-stat">Apple Technical Partner since 2012</div>
+          <div class="trainer-stat">Jamf Pro &bull; Fortinet &bull; Ruckus Certified</div>
+          <div class="trainer-stat">14+ Years IT &amp; AI Managed Services</div>
+        </div>
+        <div class="trainer-cities">
+          <strong>Past training delivered in:</strong> Bay Area CA &bull; Dallas &amp; Austin TX &bull; San Diego &bull; Los Angeles &bull; Portland OR &bull; Tokyo, Japan &bull; Penang, Malaysia
         </div>
       </div>
     </div>
